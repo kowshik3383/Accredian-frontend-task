@@ -21,7 +21,7 @@ const ReferInput = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:6500/referrals', {
+      const response = await fetch('https://accredian-backend-task-1-xb0q.onrender.com/referrals', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
