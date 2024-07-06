@@ -1,6 +1,11 @@
 
-
+import react , {useState} from "react"
+import ReferInput from "./ReferInput";
 const Referal = () => {
+    const [showForm, setShowForm] = useState(false);
+    const toggleFormVisibility = () => {
+      setShowForm(!showForm);
+    };
   return (
 	<>
 	<div className="flex justify-center items-center self-stretch px-16 py-9 mt-20 w-full bg-blue-50 max-md:px-5 max-md:mt-10 max-md:max-w-full">
@@ -61,9 +66,10 @@ const Referal = () => {
                         </div>
                     </div>
                 </div>
-                <div className="justify-center items-center px-16 py-6 mt-20 max-w-full text-xl leading-6 text-center text-white bg-blue-600 rounded-lg w-[236px] max-md:px-5 max-md:mt-10">
+                <button onClick={toggleFormVisibility} className="justify-center items-center px-16 py-6 mt-20 max-w-full text-xl leading-6 text-center text-white bg-blue-600 rounded-lg w-[236px] max-md:px-5 max-md:mt-10">
                     Refer Now
-                </div>
+                </button>
+                {showForm && <ReferInput />}
             </div>
         </div>
 	</>
